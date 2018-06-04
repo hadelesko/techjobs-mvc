@@ -6,13 +6,24 @@
 
 <div th:replace="fragments :: page-header"></div>
 
-<div class="container body-content">
+<div>
+    <table class="container body-content">
 
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+            <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    </table>
+    <table th:each="job : ${jobs}">
+            <!-- TODO #3 - Use the same list display from search.html -->
 
-    <!-- TODO #3 - Use the same list display from search.html -->
-
+            <tr th:each="column : ${job}">
+                <!--<td th:each="column : ${columns}" th:text="${column}"></td>-->
+            <td th:text="${column.key}"></td>
+            <td th:text="${column.value}"></td>
+            </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 </div>
-
 </body>
 </html>

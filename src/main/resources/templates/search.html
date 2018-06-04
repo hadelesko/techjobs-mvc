@@ -12,7 +12,6 @@
 
     <form th:action="@{/search/results}">
         <h2>Search by:</h2>
-
         <p>
             <span th:each="column : ${columns}">
                 <input
@@ -37,8 +36,25 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <!--<p th:if="${jobs.isEmpty()}" th:text="${numberjob}"></p>
+    <p th:unless="${JobData.findByValue({searchTerm}).isEmpty()}">-->
+        <h2 th:text="${jobcounter}"><>
+        <table th:each ="job : ${jobs}">
 
+            <tr th:each="column : ${job}" >
+                <td>
+                    <strong><h3 th:text="${column.key"}></h3></strong>
+                </td>
+                <td>
+                    <h3 th:text="${column.value"}></h3>
+                </td>
+            <tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 </div>
-
 </body>
 </html>
+
