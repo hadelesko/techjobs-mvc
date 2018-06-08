@@ -9,10 +9,15 @@
 <div>
     <table class="container body-content">
            <tr>
-               <td>
+               <th>
                    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-               </td>
+               </th>
            </tr>
+    </table>
+    <table class="container body-content">
+        <tr>
+            <td th:text="${jobcounter}"></td>
+        </tr>
     </table>
     <table class="container body-content" th:each="job : ${jobs}">
             <!-- TODO #3 - Use the same list display from search.html -->
