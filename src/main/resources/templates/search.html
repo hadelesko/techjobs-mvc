@@ -37,12 +37,12 @@
     <h3 th:text="${jobcounter}"></h3>
         <table  class ="job-listing" th:each ="job : ${jobs}">
             <tr th:each="column : ${job}">
-                <td>
+                <th>
                     <h4 th:text="${column.key}"></h4>
-                </td>
-                <td>
+                </th>
+                <th>
                     <h4 th:text="${column.value}"></h4>
-                </td>
+                </th>
             </tr>
         </table>
 </div>
